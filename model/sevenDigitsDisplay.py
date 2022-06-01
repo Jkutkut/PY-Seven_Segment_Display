@@ -41,6 +41,9 @@ class SevenDigitsDisplay:
 		for i in range(7):
 			self.digits[chr(i + ord("A"))] = self.itoDisplay[v][i]
 
+	def clear(self):
+		self.update(SevenDigitsDisplay.OFF)
+
 	def getStates(self):
 		return self.itoDisplay[self.v]
 
@@ -66,7 +69,15 @@ if __name__ == "__main__":
 		print("--------------")
 	
 
-	digito = SevenDigitsDisplay(769)
+	digito = SevenDigitsDisplay(9)
+	print("9")
+	print(digito)
+	print("9")
+	digito.clear()
+	print("9")
+	print(digito)
+	print("9")
+	digito.update(2)
 	print("9")
 	print(digito)
 	print("9")
