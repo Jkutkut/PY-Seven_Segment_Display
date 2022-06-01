@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 23:11:03 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/06/01 23:11:07 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/06/01 23:35:38 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,37 +15,62 @@ sys.path.append('.')
 
 from model.sevenSegmentDisplay import SevenSegmentDisplay
 
-if __name__ == "__main__":
+def printAll():
+	print("Print all")
 	for i in range(0, 16 + 1):
 		d = SevenSegmentDisplay(i)
 		print("--------------")
 		print(d)
 		print("--------------")
-	
 
-	digito = SevenSegmentDisplay("fsaf")
-	print("9")
-	print(digito)
-	print("9")
-	digito.clear()
-	print("9")
-	print(digito)
-	print("9")
-	digito.update(2)
-	print("9")
-	print(digito)
-	print("9")
-	print(digito.getStates())
+def changeDigit():
+	print("Change digit")
+	d = SevenSegmentDisplay(0)
+	print("0--------------0")
+	print(d)
+	print("0--------------0")
 
-	if digito.get("A") == True:
-		## Set LED ON
-		pass
-	else:
-		## Set LED OFF
-		pass
+	d.update(1)
+	print("1--------------1")
+	print(d)
+	print("1--------------1")
 
-	digito2 = SevenSegmentDisplay(SevenSegmentDisplay.OFF)
-	print("off")
-	print(digito2)
-	print("off")
-	print(digito2.getStates())
+	d.clear()
+	print("--------------")
+	print(d)
+	print("--------------")
+
+	d.update("A")
+	print("A--------------A")
+	print(d)
+	print("A--------------A")
+
+def getValues():
+	print("Get values")
+	d = SevenSegmentDisplay(9)
+
+	print("Get values/segments")
+	print("9--------------9")
+	print(d.getSegments(), sep=", ")
+	print("9--------------9")
+
+def getSegment():
+	print("Get segment")
+	d = SevenSegmentDisplay(9)
+
+	print("Get segment A")
+	print("9--------------9")
+	print(d.get("A"))
+	print("9--------------9")
+
+
+if __name__ == "__main__":
+	printAll()
+
+	changeDigit()
+
+	getValues()
+
+	getSegment()
+
+	print("End of test")

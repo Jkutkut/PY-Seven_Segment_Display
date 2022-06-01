@@ -51,7 +51,7 @@ class SevenSegmentDisplay:
 		'''Clears the display'''
 		self.update(SevenSegmentDisplay.OFF)
 
-	def getStates(self):
+	def getSegments(self) -> list:
 		'''Returns a list with the states of the seven segments display'''
 		return self.itoDisplay[self.v]
 
