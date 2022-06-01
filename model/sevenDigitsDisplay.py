@@ -32,10 +32,11 @@ class SevenDigitsDisplay:
 			"F": False,
 			"G": False
 		}
+		self.update(v)
 
-		if v == None or v >= len(self.itoDisplay):
+	def update(self, v):
+		if not (type(v) is int) or v < 0 or v > SevenDigitsDisplay.OFF:
 			v = self.OFF
-		
 		self.v = v
 		for i in range(7):
 			self.digits[chr(i + ord("A"))] = self.itoDisplay[v][i]
@@ -65,7 +66,7 @@ if __name__ == "__main__":
 		print("--------------")
 	
 
-	digito = SevenDigitsDisplay(9)
+	digito = SevenDigitsDisplay(769)
 	print("9")
 	print(digito)
 	print("9")
