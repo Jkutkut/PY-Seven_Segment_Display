@@ -1,5 +1,10 @@
 class SevenDigitsDisplay:
-	def __init__(self):
+
+	itoSD2 = [
+		[True, True, True, True, True, True, False] # 0
+	]
+
+	def __init__(self, v=None):
 		self.digits = {
 			"A": False,
 			"B": False,
@@ -10,11 +15,11 @@ class SevenDigitsDisplay:
 			"G": False
 		}
 
-		self.digits["A"] = True
-		self.digits["F"] = True
-		self.digits["G"] = True
-		self.digits["C"] = True
-		self.digits["D"] = True
+		if v == None:
+			return
+		for i in range(7):
+			# print(chr(i + ord("A")) + str(self.itoSD2[v][i]))
+			self.digits[chr(i + ord("A"))] = self.itoSD2[v][i]
 
 	def __str__(self):
 		return f" {self.get('A')} \n{self.get('F')}  {self.get('B')}\n {self.get('G')} \n{self.get('E')}  {self.get('C')}\n {self.get('D')} "
@@ -36,5 +41,5 @@ class SevenDigitsDisplay:
 
 
 if __name__ == "__main__":
-	d = SevenDigitsDisplay()
+	d = SevenDigitsDisplay(0)
 	print(d)
