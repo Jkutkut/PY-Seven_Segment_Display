@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    sevenSegmentDisplay.py                             :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/06/01 23:11:13 by jre-gonz          #+#    #+#              #
+#    Updated: 2022/06/01 23:11:14 by jre-gonz         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 class SevenSegmentDisplay:
 	'''Class with the logic need to parse a number to a seven segments display'''
 
