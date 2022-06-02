@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 23:11:03 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/06/01 23:35:38 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/06/02 14:42:39 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,24 @@ def getSegment():
 	print(d.get("A"))
 	print("9--------------9")
 
+# String version
+def initAsString():
+	displays = [
+		SevenSegmentDisplay('2'),
+		SevenSegmentDisplay("3"),
+		SevenSegmentDisplay('A')
+	]
+
+	print("Displays made with string")
+	for d in displays:
+		print("----------")
+		print(d)
+		print("----------")
+
+
+
+# Fail tests
+
 
 if __name__ == "__main__":
 	printAll()
@@ -72,5 +90,9 @@ if __name__ == "__main__":
 	getValues()
 
 	getSegment()
+
+	# String
+
+	initAsString()
 
 	print("End of test")
