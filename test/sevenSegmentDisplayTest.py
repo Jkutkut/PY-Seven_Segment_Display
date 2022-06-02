@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 23:11:03 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/06/02 14:52:14 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/06/02 15:02:27 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,6 +99,25 @@ def getSegmentAsInt():
 
 # Fail tests
 
+def createInvalidSegment():
+	invalidSegments = [
+		SevenSegmentDisplay(None),
+		SevenSegmentDisplay(""),
+		SevenSegmentDisplay("12"),
+		SevenSegmentDisplay("AA"),
+		SevenSegmentDisplay("-"),
+		SevenSegmentDisplay(" 1"),
+		SevenSegmentDisplay("1 "),
+		SevenSegmentDisplay(-1),
+		SevenSegmentDisplay(0b10000),
+		SevenSegmentDisplay(24)
+	]
+	print("Testing invalid creations")
+	for s in invalidSegments:
+		if s.v != SevenSegmentDisplay.OFF:
+			print(f"  - Error: Segment with value {s.v} instead of {SevenSegmentDisplay.OFF}")
+	print("Testing invalid creations ended")
+
 
 if __name__ == "__main__":
 	printAll()
@@ -114,5 +133,7 @@ if __name__ == "__main__":
 	initAsString()
 
 	getSegmentAsInt()
+
+	createInvalidSegment()
 
 	print("End of test")
