@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 23:11:03 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/06/02 14:42:39 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/06/02 14:52:14 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ def getSegment():
 	print(d.get("A"))
 	print("9--------------9")
 
-# String version
+# Extra functionalities
 def initAsString():
 	displays = [
 		SevenSegmentDisplay('2'),
@@ -77,6 +77,24 @@ def initAsString():
 		print(d)
 		print("----------")
 
+def getSegmentAsInt():
+	print("Get segment as int")
+	d = SevenSegmentDisplay(9)
+
+	print("Get segment C")
+	print("9--------------9")
+	print(d.get(2))
+	print("9--------------9")
+
+	print("Get first segment")
+	print("9--------------9")
+	print(d.get(0))
+	print("9--------------9")
+
+	print("Get last segment")
+	print("9--------------9")
+	print(d.get(SevenSegmentDisplay.SEGMENTS - 1))
+	print("9--------------9")
 
 
 # Fail tests
@@ -94,5 +112,7 @@ if __name__ == "__main__":
 	# String
 
 	initAsString()
+
+	getSegmentAsInt()
 
 	print("End of test")
