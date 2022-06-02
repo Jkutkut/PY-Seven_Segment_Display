@@ -6,7 +6,7 @@
 #    By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/02 15:09:22 by jre-gonz          #+#    #+#              #
-#    Updated: 2022/06/02 16:27:50 by jre-gonz         ###   ########.fr        #
+#    Updated: 2022/06/02 16:31:42 by jre-gonz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,9 @@ class Display:
 
 		for i in range(self.SIZE):
 			self.segmentDisplays[i].update(self.value[i])
+
+	def getSegmentDisplays(self):
+		return self.segmentDisplays
 
 	def __str__(self):
 		segmentStr = [d.__str__().split("\n") for d in self.segmentDisplays]
